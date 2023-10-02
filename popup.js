@@ -1,7 +1,7 @@
 // Function to fetch quota information
 // Function to fetch quota information
 function fetchQuota(username, password) {
-    return fetch('https://beyerdynamic.gay.xn--q9jyb4c/webgen/quota', {
+    return fetch('https://webgen.gay.xn--q9jyb4c/quota', {
         method: 'GET',
         headers: {
             'Authorization': 'Basic ' + btoa(username + ':' + password)

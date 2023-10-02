@@ -11,7 +11,7 @@ chrome.contextMenus.create({
       chrome.storage.sync.get(['username', 'password'], function (data) {
         const username = data.username;
         const password = data.password;
-        fetch('https://beyerdynamic.gay.xn--q9jyb4c/webgen/answer', {
+        fetch('https://webgen.gay.xn--q9jyb4c/answer', {
           method: 'POST',
           headers: new Headers({
             Authorization: 'Basic ' + btoa(username + ':' + password),
@@ -21,8 +21,12 @@ chrome.contextMenus.create({
         })
           .then((res) => res.json())
           .then((data) => {
-            if (data.error && data.error === 'ERR_ANSWER_REFUSED') {
-              alert('Your question either could not be solved or has ethical concerns.');
+            if (data.error) {
+              if (data.error === 'ERR_ANSWER_REFUSED') {
+                alert('Your question either could not be solved or has ethical concerns.');
+              } else if (data.error === 'Question limit reached for this account') {
+                alert('Question limit reached for this account. Please contact el1a.');
+              }
             } else {
               // Store remaining and asked questions
               chrome.storage.sync.set({
