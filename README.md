@@ -8,3 +8,6 @@ Contact me (heterosexual@gay.xn--q9jyb4c) for an account
 ### My quota has been reached
 Again, contact me. Depending on if you're from my school and are able to i may request a small fee (this extension is not free to run)
 
+
+## Download
+Download newest release from release tab
